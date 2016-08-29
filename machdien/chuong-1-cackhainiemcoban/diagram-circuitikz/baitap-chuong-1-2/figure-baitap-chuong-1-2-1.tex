@@ -1,0 +1,33 @@
+\documentclass[border=12pt]{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[utf8]{vietnam} %Bien dich duoc tieng Viet
+\usepackage{amsmath,amsfonts,amssymb} %Font toan
+\usepackage{tikz}
+\usepackage{siunitx}
+\usepackage[american,cuteinductors,smartlabels]{circuitikz}
+\begin{document}
+\begin{circuitikz}\draw
+	(0,0) to [american voltage source, l_ = $30V$] (0,3) to [R,*-*, l_ = $2 \Omega$] (4,3) to [short] (5,3) to [short] (5,4) to [R, l_ = $8\Omega$] (8,4) to [short] (8, 2) to [R, l_ = $4 \Omega$] (5,2) to [short] (5,3)
+	
+	(8,3) to [short] (9,3) to [R,*-, l_ = $R$] (9,0) to [short] (0,0)
+	
+	(4,3) to [R,-*, l_ = $10\Omega$] (4,0)
+	
+	%Ghi các ký hiệu
+	(0,3) to [short, i_= $I_2$] (1.4,3)
+	(4,3) to [short, i_ = $I$] (4,2.1)
+	(4,3) to [short, i_ = $I_1$] (4.9,3)
+	(5,2) to [short, i_ = $2A$] (5.9,2)
+	
+	% Đặt tên các nút
+	(0,3.3) node {$a$}
+	(4,3.3) node {$b$}
+	(9,3.3) node {$c$}
+	(4.3,0.3) node {$d$}
+	
+	%Vẽ các vòng 
+	(2,1.5) node[scale=5]{$\circlearrowright$} (2.5,1.5)
+	(2,1.5) node{$L1$}
+	;
+\end{circuitikz}
+\end{document} 
