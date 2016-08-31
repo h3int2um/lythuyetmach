@@ -1,0 +1,16 @@
+\documentclass[border=12pt]{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[utf8]{vietnam} %Bien dich duoc tieng Viet
+\usepackage{amsmath,amsfonts,amssymb} %Font toan
+\usepackage{tikz}
+\usepackage{siunitx}
+\usepackage[american,cuteinductors,smartlabels]{circuitikz}
+\begin{document}
+\begin{circuitikz}\draw
+	(0,0) to [american voltage source, l_ = $50V$] (0,6) to [short,i_=$I$] (3,6)
+	(3,6) to [R, l_ = $21\Omega$] (3,3) to [R, l_ = $4\Omega$] (3,0) to [short] (0,0)
+	(4,.9) to [open,v^>=$V_0$] (4,1.9)
+	(4,3.9) to [open,v^>=$V_1$] (4,4.9)
+	;
+\end{circuitikz}
+\end{document} 
