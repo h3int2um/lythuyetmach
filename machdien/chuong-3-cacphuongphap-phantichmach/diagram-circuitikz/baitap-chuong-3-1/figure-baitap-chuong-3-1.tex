@@ -1,0 +1,36 @@
+\documentclass[border=12pt]{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[utf8]{vietnam} %Bien dich duoc tieng Viet
+\usepackage{amsmath,amsfonts,amssymb} %Font toan
+\usepackage{siunitx}
+\usepackage[american,cuteinductors,smartlabels]{circuitikz}
+\begin{document}
+\begin{circuitikz}\draw
+	(0,0) 	 to [american voltage source, l_ = $24V$] (0,6) to  [R, l_ = $2\Omega$] (4,6) to [R,*-*, l_ = $1 \Omega$] (8,6) to [R, *-, l_ = $1\Omega$] (12,6)
+	(12,0) to [american voltage source, l_ = $16V$] (12,6) 
+	(12,0) to [short] (0,0)
+	
+	(8,0) to [R,  l_ = $2 \Omega$] (8,6)
+	(4,0) to [short] (4,2) to [R, l_ = $2 \Omega$] (4,4) to [short] (4,6)
+	
+	(4,1) to [short] (2,1) to [american current source, l_ = $4A$] (2,5) to [short] (4,5)
+	
+	(0,6) to [short, i_ = $I_1$] (1.4,6)
+	(4,6) to [short, i_ = $I_3$] (5.4,6)
+	
+	(4,1) to [short, i_ = $I_4$] (4,2.4)
+	
+	(4,5) to [short, i_ = $I_6$] (4,6)
+	
+	(8,6) to [short, i_ = $I_5$] (8,3.6)
+	
+	(12,3.6) to [short, i_ = $I_2$] (12,6)
+	
+	(4,6.3) node {$v_1$}
+	(3.7,5.8) node {$a$}
+
+	(8,6.3) node {$v_2$}
+	(7.7,5.8) node {$b$}
+	;
+\end{circuitikz}
+\end{document} 
